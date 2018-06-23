@@ -1,5 +1,7 @@
 package br.unisal.blogunisal.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -38,5 +40,12 @@ public class UserService {
 				.email(email)
 				.build();	
 		return userRepository.findOne(Example.of(user)).orElseThrow(NotFoundException::new);
+	}
+
+	/**
+	 * @return
+	 */
+	public List<User> findAll() {
+		return userRepository.findAll();
 	}
 }

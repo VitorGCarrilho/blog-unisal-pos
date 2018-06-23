@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Document(collection = "post")
 public class Post implements Serializable  {
@@ -27,7 +26,15 @@ public class Post implements Serializable  {
 	
 	public User author;
 	
+	public String title;
+	
+	public String postBody;
+	
 	public LocalDateTime date;
 	
 	public List<Comment> comments;
+	
+	public Post() {
+		date = LocalDateTime.now();
+	}
 }

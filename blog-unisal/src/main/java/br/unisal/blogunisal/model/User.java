@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import br.unisal.blogunisal.model.Post.PostBuilder;
@@ -29,6 +30,7 @@ public class User implements Serializable {
 	
 	private String name;
 	
+	@Indexed(unique=true)
 	private String email;
 	
 	private String password;

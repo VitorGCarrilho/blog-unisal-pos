@@ -1,5 +1,7 @@
 package br.unisal.blogunisal.repository;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import br.unisal.blogunisal.model.Post;
@@ -9,5 +11,4 @@ import br.unisal.blogunisal.model.Post;
  *
  */
 public interface PostRepository extends MongoRepository<Post, String>{
-
 }

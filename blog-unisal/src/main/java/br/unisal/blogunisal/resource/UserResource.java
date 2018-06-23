@@ -1,5 +1,7 @@
 package br.unisal.blogunisal.resource;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("api/v1/user")
-public class UserController {
+public class UserResource {
 	@Autowired
 	private UserService userService;
 	
@@ -39,6 +41,14 @@ public class UserController {
 		user = userService.save(user);
 		log.info("POST request to [api/v1/user] returned");
 		return new ResponseEntity<User>(user, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("all")
+	public ResponseEntity<List<User>> findAll(){
+		log.info("GET request to [api/v1/user/all] received");
+		List<User> user = userService.findAll();
+		log.info("GET request to [api/v1/user/all] returned");
+		return ResponseEntity.ok().body(user);
 	}
 	
 	
