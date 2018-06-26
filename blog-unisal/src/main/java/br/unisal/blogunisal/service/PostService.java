@@ -32,4 +32,8 @@ public class PostService {
 		Post post = Post.builder().id(id).build();
 		return postRepository.findOne(Example.of(post)).orElseThrow(NotFoundException::new);
 	}
+
+	public void delete(String id) {
+		postRepository.delete(this.findOne(id));
+	}
 }

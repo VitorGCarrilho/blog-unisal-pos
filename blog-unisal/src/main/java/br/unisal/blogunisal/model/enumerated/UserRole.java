@@ -6,5 +6,6 @@ package br.unisal.blogunisal.model.enumerated;
  */
 public enum UserRole {
 	AUTHOR,
-	NORMAL_USER;
+	NORMAL_USER,
+	ADMIN;
 }

@@ -48,4 +48,8 @@ public class UserService {
 	public List<User> findAll() {
 		return userRepository.findAll();
 	}
+
+	public void delete(String id) {
+		userRepository.delete(this.findOne(id));
+	}
 }

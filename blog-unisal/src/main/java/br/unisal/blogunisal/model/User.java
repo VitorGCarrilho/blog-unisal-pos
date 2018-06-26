@@ -30,7 +30,7 @@ public class User implements Serializable {
 	
 	private String name;
 	
-	@Indexed(unique=true)
+	@Indexed(unique=true, sparse=true)
 	private String email;
 	
 	private String password;

@@ -22,9 +22,15 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Comment implements Serializable {
 	
-	public User user;
+	public UserComment user;
 	
 	public LocalDateTime date;
 	
 	public String comment;
+	
+	@Data
+	public class UserComment {
+		private String name;
+		private String email;
+	}
 }

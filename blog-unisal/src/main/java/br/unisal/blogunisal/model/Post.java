@@ -24,7 +24,7 @@ public class Post implements Serializable  {
 	@Id
 	public String id;
 	
-	public User author;
+	public Author author;
 	
 	public String title;
 	
@@ -36,5 +36,11 @@ public class Post implements Serializable  {
 	
 	public Post() {
 		date = LocalDateTime.now();
+	}
+	
+	@Data
+	public class Author {
+		private String name;
+		private String email;
 	}
 }
